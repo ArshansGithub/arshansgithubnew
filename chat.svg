@@ -1,4 +1,4 @@
-<svg width="550" height="933" viewBox="0 0 550 933" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="this.classList.toggle('paused')">
+<svg width="550" height="957" viewBox="0 0 550 957" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="this.classList.toggle('paused')">
   <style>
     .bubble {
       fill: #e9e9eb;
@@ -302,51 +302,51 @@
     @keyframes msg-9 {
       0% {
         opacity: 0;
-        transform: translate(120px, 654px);
+        transform: translate(98px, 654px);
       }
       100% {
         opacity: 1;
-        transform: translate(120px, 649px);
+        transform: translate(98px, 649px);
       }
     }
     @keyframes msg-10 {
       0% {
         opacity: 0;
-        transform: translate(10px, 714px);
+        transform: translate(10px, 738px);
       }
       100% {
         opacity: 1;
-        transform: translate(10px, 709px);
+        transform: translate(10px, 733px);
       }
     }
     @keyframes msg-11 {
       0% {
         opacity: 0;
-        transform: translate(343px, 774px);
+        transform: translate(343px, 798px);
       }
       100% {
         opacity: 1;
-        transform: translate(343px, 769px);
+        transform: translate(343px, 793px);
       }
     }
     @keyframes msg-12 {
       0% {
         opacity: 0;
-        transform: translate(337px, 822px);
+        transform: translate(337px, 846px);
       }
       100% {
         opacity: 1;
-        transform: translate(337px, 817px);
+        transform: translate(337px, 841px);
       }
     }
     @keyframes msg-13 {
       0% {
         opacity: 0;
-        transform: translate(330px, 870px);
+        transform: translate(330px, 894px);
       }
       100% {
         opacity: 1;
-        transform: translate(330px, 865px);
+        transform: translate(330px, 889px);
       }
     }
   </style>
@@ -561,14 +561,15 @@
     </circle>
   </g>
   <!-- stealth_company -->
-  <g transform="translate(120, 649)" class="msg-9 sent-bubble">
-    <rect x="0" width="410" height="42" rx="18" />
-    <circle cx="404.68146" cy="33.091" r="7.68185" class="bubble" />
-    <circle cx="414.72699" cy="41.9547" r="3.54547" class="bubble" />
-    <text x="15" y="27">I'm also currently building a company in Stealth.</text>
+  <g transform="translate(98, 649)" class="msg-9 sent-bubble">
+    <rect x="0" width="432" height="66" rx="18" />
+    <circle cx="426.68146" cy="57.091" r="7.68185" class="bubble" />
+    <circle cx="436.72699" cy="65.9547" r="3.54547" class="bubble" />
+    <text x="15" y="27">I'm also currently building a health/lifestyle app in</text>
+    <text x="15" y="50">Stealth.</text>
   </g>
   <!-- typing 10 -->
-  <g transform="translate(10, 709)" class="typing-10 received-bubble">
+  <g transform="translate(10, 733)" class="typing-10 received-bubble">
     <rect x="8.27246" width="69.7276" height="42" rx="20.9774" class="bubble" />
     <circle cx="13.591" cy="33.091" r="7.68185" class="bubble" />
     <circle cx="3.54547" cy="41.9547" r="3.54547" class="bubble" />
@@ -584,14 +585,14 @@
     </circle>
   </g>
   <!-- question_4 -->
-  <g transform="translate(10, 709)" class="msg-10 received-bubble">
-    <rect x="8.27246" width="287" height="42" rx="18" />
+  <g transform="translate(10, 733)" class="msg-10 received-bubble">
+    <rect x="8.27246" width="293" height="42" rx="18" />
     <circle cx="13.591" cy="33.091" r="7.68185" class="bubble" />
     <circle cx="3.54547" cy="41.9547" r="3.54547" class="bubble" />
-    <text x="23.272460000000002" y="27">Impressive! How can I reach you?</text>
+    <text x="23.272460000000002" y="27">Impressive! Where can I find you?</text>
   </g>
   <!-- typing 11 -->
-  <g transform="translate(460.2724, 769)" class="typing-11 sent-bubble">
+  <g transform="translate(460.2724, 793)" class="typing-11 sent-bubble">
     <rect x="0" width="69.7276" height="42" rx="20.9774" class="bubble" />
     <circle cx="64.40906" cy="33.091" r="7.68185" class="bubble" />
     <circle cx="74.45459" cy="41.9547" r="3.54547" class="bubble" />
@@ -607,14 +608,14 @@
     </circle>
   </g>
   <!-- contact_linkedin -->
-  <g transform="translate(343, 769)" class="msg-11 message-group sent-bubble" onclick="window.open('https://linkedin.com/in/arshanshokoohi', '_blank')">
+  <g transform="translate(343, 793)" class="msg-11 message-group sent-bubble" onclick="window.open('https://linkedin.com/in/arshanshokoohi', '_blank')">
     <rect x="0" width="187" height="42" rx="18" />
     <circle cx="181.68146" cy="33.091" r="7.68185" class="bubble" />
     <circle cx="191.72699" cy="41.9547" r="3.54547" class="bubble" />
     <text x="15" y="27">Find me on LinkedIn</text>
   </g>
   <!-- typing 12 -->
-  <g transform="translate(460.2724, 817)" class="typing-12 sent-bubble">
+  <g transform="translate(460.2724, 841)" class="typing-12 sent-bubble">
     <rect x="0" width="69.7276" height="42" rx="20.9774" class="bubble" />
     <circle cx="64.40906" cy="33.091" r="7.68185" class="bubble" />
     <circle cx="74.45459" cy="41.9547" r="3.54547" class="bubble" />
@@ -630,14 +631,14 @@
     </circle>
   </g>
   <!-- contact_email -->
-  <g transform="translate(337, 817)" class="msg-12 message-group sent-bubble" onclick="window.open('mailto:arshan@arshan.dev', '_blank')">
+  <g transform="translate(337, 841)" class="msg-12 message-group sent-bubble" onclick="window.open('mailto:arshan@arshan.dev', '_blank')">
     <rect x="0" width="193" height="42" rx="18" />
     <circle cx="187.68146" cy="33.091" r="7.68185" class="bubble" />
     <circle cx="197.72699" cy="41.9547" r="3.54547" class="bubble" />
     <text x="15" y="27">or shoot me an email!</text>
   </g>
   <!-- typing 13 -->
-  <g transform="translate(460.2724, 865)" class="typing-13 sent-bubble">
+  <g transform="translate(460.2724, 889)" class="typing-13 sent-bubble">
     <rect x="0" width="69.7276" height="42" rx="20.9774" class="bubble" />
     <circle cx="64.40906" cy="33.091" r="7.68185" class="bubble" />
     <circle cx="74.45459" cy="41.9547" r="3.54547" class="bubble" />
@@ -653,7 +654,7 @@
     </circle>
   </g>
   <!-- farewell -->
-  <g transform="translate(288, 865)" class="msg-13 sent-bubble">
+  <g transform="translate(288, 889)" class="msg-13 sent-bubble">
     <rect x="0" width="242" height="42" rx="18" />
     <circle cx="236.68146" cy="33.091" r="7.68185" class="bubble" />
     <circle cx="246.72699" cy="41.9547" r="3.54547" class="bubble" />
