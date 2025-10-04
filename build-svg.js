@@ -428,9 +428,31 @@ ${tailSVG}${textContent}  </g>`
 }
 
 /**
+ * Fetches a remote image and converts it to a Base64 data URI.
+ */
+async function embedImageAsBase64(url) {
+  try {
+    // Convert GitHub blob URLs to raw URLs
+    const rawUrl = url
+      .replace('github.com', 'raw.githubusercontent.com')
+      .replace('/blob/', '/');
+    
+    console.log(`📥 Fetching image: ${rawUrl}`);
+    const response = await got(rawUrl, { responseType: 'buffer' });
+    const base64 = response.body.toString('base64');
+    const mimeType = response.headers['content-type'] || 'image/jpeg';
+    console.log(`✅ Image embedded successfully (${(base64.length / 1024).toFixed(2)} KB)`);
+    return `data:${mimeType};base64,${base64}`;
+  } catch (error) {
+    console.error(`❌ Failed to fetch image at ${url}:`, error.message);
+    return url; // Fallback to the original URL
+  }
+}
+
+/**
  * Generate attachment (image or SVG) SVG
  */
-function generateAttachment(message, index, yPosition, data) {
+async function generateAttachment(message, index, yPosition, data) {
   const messageId = message.id
   const sender = message.sender || 'them'
   const isSent = sender === 'me'
@@ -453,8 +475,12 @@ function generateAttachment(message, index, yPosition, data) {
   // Handle different attachment types
   let content = ''
   if (attachment.type === 'image') {
-    const processedUrl = replaceTemplateVars(attachment.url, data)
-    content = `    <image href="${processedUrl}" x="0" y="0" width="${attWidth}" height="${attHeight}" preserveAspectRatio="xMidYMid slice" />`
+    let imageUrl = replaceTemplateVars(attachment.url, data);
+    // Embed remote images as Base64 to ensure they display correctly
+    if (imageUrl.startsWith('http')) {
+      imageUrl = await embedImageAsBase64(imageUrl);
+    }
+    content = `    <image href="${imageUrl}" x="0" y="0" width="${attWidth}" height="${attHeight}" preserveAspectRatio="xMidYMid slice" />`
   } else if (attachment.type === 'svg') {
     // For SVG, embed it directly or reference it
     const processedUrl = replaceTemplateVars(attachment.url, data)
@@ -614,14 +640,14 @@ function generateKeyframes(messages, data) {
 /**
  * Generate complete SVG
  */
-function generateSVG(data) {
+async function generateSVG(data) {
   const messages = config.messages
   let yPosition = 0
   let svgContent = ''
   let lastSender = null
   
   // Generate typing indicators and messages
-  messages.forEach((message, index) => {
+  for (const [index, message] of messages.entries()) {
     const msgIndex = index + 1
     const currentSender = message.sender || 'them'
     
@@ -637,7 +663,7 @@ function generateSVG(data) {
     
     // Generate message bubble or attachment
     if (message.attachment) {
-      svgContent += generateAttachment(message, msgIndex, yPosition, data) + '\n'
+      svgContent += await generateAttachment(message, msgIndex, yPosition, data) + '\n'
       const attHeight = message.attachment.height || config.styling.attachmentHeight
       yPosition += attHeight + config.styling.messageSpacing
     } else if (message.text) {
@@ -650,7 +676,7 @@ function generateSVG(data) {
     }
     
     lastSender = currentSender
-  })
+  }
   
   // Calculate total height
   const totalHeight = yPosition + 20 // Add padding at bottom
@@ -826,7 +852,7 @@ async function main() {
   console.log('')
   
   // Generate SVG
-  const svg = generateSVG(data)
+  const svg = await generateSVG(data)
   
   // Write to file
   fs.writeFileSync(config.output.outputPath, svg, 'utf-8')
