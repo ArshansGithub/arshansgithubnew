@@ -541,7 +541,7 @@
       <rect x="0" width="250" height="200" rx="12" />
     </clipPath>
     <g clip-path="url(#clip-venue_image)">
-    <image href="https://github.com/arshansgithub/arshansgithubnew/blob/main/images/shiley.jpeg" x="0" y="0" width="250" height="200" preserveAspectRatio="xMidYMid slice" />
+    <image href="https://github.com/ArshansGithub/arshansgithubnew/blob/main/images/shiley.jpeg?raw=true" x="0" y="0" width="250" height="200" preserveAspectRatio="xMidYMid slice" />
     </g>
   </g>
   <!-- typing 9 -->
