@@ -32,14 +32,20 @@ export default {
 
   // iMessage Styling (maintains authentic look)
   styling: {
-    // Bubble colors (light mode)
-    bubbleColor: '#e9e9eb',
-    textColor: '#242424',
-    linkColor: '#0079ff',
+    // Received message colors (gray bubbles, left-aligned)
+    receivedBubbleColor: '#e9e9eb',
+    receivedTextColor: '#242424',
+    receivedBubbleColorDark: '#3b3b3d',
+    receivedTextColorDark: '#dcdcdc',
     
-    // Bubble colors (dark mode)
-    bubbleColorDark: '#3b3b3d',
-    textColorDark: '#dcdcdc',
+    // Sent message colors (blue bubbles, right-aligned)
+    sentBubbleColor: '#007aff',
+    sentTextColor: '#ffffff',
+    sentBubbleColorDark: '#0a84ff',
+    sentTextColorDark: '#ffffff',
+    
+    // Link colors
+    linkColor: '#0079ff',
     linkColorDark: '#0c82f9',
     
     // Typography
@@ -51,6 +57,12 @@ export default {
     bubbleRadius: 18,
     bubblePadding: 15,
     messageSpacing: 6, // Gap between messages (reduced for tight layout)
+    groupSpacing: 12, // Extra space between conversation groups
+    
+    // Attachment styling
+    attachmentWidth: 250,
+    attachmentHeight: 250,
+    attachmentBorderRadius: 12,
     
     // Hover effects
     enableHover: true,
@@ -59,32 +71,33 @@ export default {
 
   // Personal Information (for dynamic data)
   personal: {
-    name: 'Jason',
+    name: 'Arshan',
     location: {
-      city: 'Columbus',
-      state: 'Ohio',
-      // AccuWeather location key (get from accuweather.com)
-      locationKey: '18363_PC',
+      city: 'San Diego',
+      state: 'California',
+      // Coordinates for Open-Meteo API
+      latitude: '32.7157',
+      longitude: '-117.1611',
     },
     work: {
-      currentCompany: 'PlanetScale',
-      currentRole: 'product designer',
+      currentCompany: 'Student',
+      currentRole: 'Rancho Bernardo High School',
       previousCompany: 'GitHub',
       startDate: '2020-12-14', // Format: YYYY-MM-DD
     },
     social: {
-      platform: 'Bluesky',
-      url: 'https://bsky.app/profile/jasonlong.me',
-      displayUrl: 'https://bsky.app/profile/jasonlong.me',
+      linkedin: 'https://linkedin.com/in/arshanshokoohi',
+      email: 'mailto:arshan@arshan.dev',
+      platform: 'LinkedIn',
+      url: 'https://linkedin.com/in/arshanshokoohi',
     },
   },
 
   // Weather Settings
   weather: {
     enabled: true,
-    apiKey: process.env.WEATHER_API_KEY || '',
-    // Use AccuWeather API (can be extended to support other services)
-    provider: 'accuweather',
+    // Open-Meteo API (no API key needed!)
+    provider: 'open-meteo',
     // Show both Fahrenheit and Celsius
     showBothUnits: true,
     // Primary unit (F or C)
@@ -92,122 +105,88 @@ export default {
   },
 
   // Messages Configuration
+  // Note: width and height are now auto-calculated! Remove them to use dynamic sizing.
   messages: [
     {
       id: 'greeting',
-      // Message text (can use template variables)
-      text: "Hi, I'm {{name}}",
-      // Message type: single-line or multi-line
-      lines: 1,
-      // Auto-calculate width based on text
-      autoWidth: true,
-      // Or specify custom width
-      width: 150,
-      height: 42,
-      // Enable click interaction
-      clickable: false,
-      clickUrl: null,
+      text: "Hey! Who's this?",
+      sender: 'them',
     },
     {
-      id: 'location_weather',
-      text: [
-        "I live in {{location.city}}, {{location.state}} where it's supposed to be",
-        "{{weather.temp_f}}° F ({{weather.temp_c}}° C) and {{weather.emoji}} today.",
-      ],
-      lines: 2,
-      autoWidth: true,
-      width: 430,
-      height: 65,
-      clickable: false,
-      // This message uses dynamic weather data
+      id: 'intro',
+      text: "Hi! I'm {{name}} 👋",
+      sender: 'me',
+    },
+    {
+      id: 'question_2',
+      text: "Where are you from?",
+      sender: 'them',
+    },
+    {
+      id: 'location',
+      text: "I'm from {{location.city}}, {{location.state}}!",
+      sender: 'me',
+    },
+    {
+      id: 'weather',
+      text: "It's {{weather.temp_f}}° F and {{weather.emoji}} today",
+      sender: 'me',
       usesWeather: true,
     },
     {
-      id: 'work_info',
-      text: [
-        "I'm a {{work.role}}. I used to work at {{work.previous}},",
-        "but I've been at {{work.current}} for {{work.duration}} now.",
-      ],
-      lines: 2,
-      autoWidth: true,
-      width: 446,
-      height: 65,
-      clickable: false,
-      // This message uses dynamic work duration
-      usesDuration: true,
+      id: 'question_3',
+      text: "Cool! What are you working on?",
+      sender: 'them',
     },
     {
-      id: 'project_showcase',
-      text: [
-        "My favorite project is isometric-contributions. It's a",
-        "browser extension that shows your GitHub",
-        "contributions like this",
-      ],
-      lines: 3,
-      autoWidth: true,
-      width: 462,
-      height: 88,
-      clickable: false,
+      id: 'cipherhacks_intro',
+      text: "I'm currently working on CipherHacks, a free cybersecurity high school hackathon. Just check out this venue 😍",
+      sender: 'me',
     },
     {
-      id: 'social_link',
-      text: [
-        "You can find me on {{social.platform}} at",
-        "{{social.url}}",
-      ],
-      lines: 2,
-      autoWidth: true,
-      width: 326,
-      height: 65,
+      id: 'venue_image',
+      attachment: {
+        type: 'image',
+        url: 'https://github.com/arshansgithub/arshansgithubnew/blob/main/images/shiley.jpeg',
+        alt: 'CipherHacks Venue',
+        width: 250,
+        height: 200,
+      },
+      sender: 'me',
       clickable: true,
-      clickUrl: '{{social.url}}',
-      // Line 2 is a clickable link
-      linkLine: 1, // 0-indexed
+      clickUrl: 'https://cipherhacks.com',
+    },
+    {
+      id: 'stealth_company',
+      text: "I'm also currently building a health/lifestyle app in Stealth.",
+      sender: 'me',
+    },
+    {
+      id: 'question_4',
+      text: "Impressive! Where can I find you?",
+      sender: 'them',
+    },
+    {
+      id: 'contact_linkedin',
+      text: "Find me on LinkedIn",
+      sender: 'me',
+      clickable: true,
+      clickUrl: '{{social.linkedin}}',
+    },
+    {
+      id: 'contact_email',
+      text: "or shoot me an email!",
+      sender: 'me',
+      clickable: true,
+      clickUrl: '{{social.email}}',
     },
     {
       id: 'farewell',
-      text: "Have a great {{day}}! ✌🏻",
-      lines: 1,
-      autoWidth: true,
-      width: 220,
-      height: 42,
-      clickable: false,
-      // Uses dynamic day of week
+      text: "Have a great {{day}}! 👋",
+      sender: 'me',
       usesDay: true,
     },
   ],
-
-  // Weather emoji mapping (AccuWeather icon codes)
-  weatherEmojis: {
-    1: '☀️',   // Sunny
-    2: '☀️',   // Mostly Sunny
-    3: '🌤',   // Partly Sunny
-    4: '🌤',   // Intermittent Clouds
-    5: '🌤',   // Hazy Sunshine
-    6: '🌥',   // Mostly Cloudy
-    7: '☁️',   // Cloudy
-    8: '☁️',   // Dreary (Overcast)
-    11: '🌫',  // Fog
-    12: '🌧',  // Showers
-    13: '🌦',  // Mostly Cloudy w/ Showers
-    14: '🌦',  // Partly Sunny w/ Showers
-    15: '⛈',   // T-Storms
-    16: '⛈',   // Mostly Cloudy w/ T-Storms
-    17: '🌦',  // Partly Sunny w/ T-Storms
-    18: '🌧',  // Rain
-    19: '🌨',  // Flurries
-    20: '🌨',  // Mostly Cloudy w/ Flurries
-    21: '🌨',  // Partly Sunny w/ Flurries
-    22: '❄️',  // Snow
-    23: '❄️',  // Mostly Cloudy w/ Snow
-    24: '🌧',  // Ice
-    25: '🌧',  // Sleet
-    26: '🌧',  // Freezing Rain
-    29: '🌧',  // Rain and Snow
-    30: '🥵',  // Hot
-    31: '🥶',  // Cold
-    32: '💨',  // Windy
-  },
 
   // Advanced: Custom day bubble widths for authentic variable-width messages
   // Set to null to auto-calculate based on text
