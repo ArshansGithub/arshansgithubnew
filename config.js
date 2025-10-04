@@ -147,7 +147,7 @@ export default {
       id: 'venue_image',
       attachment: {
         type: 'image',
-        url: 'https://github.com/arshansgithub/arshansgithubnew/blob/main/images/shiley.jpeg',
+        url: 'https://github.com/ArshansGithub/arshansgithubnew/blob/main/images/shiley.jpeg?raw=true',
         alt: 'CipherHacks Venue',
         width: 250,
         height: 200,
