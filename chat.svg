@@ -462,11 +462,11 @@
     </circle>
   </g>
   <!-- weather -->
-  <g transform="translate(317, 228)" class="msg-5 sent-bubble">
-    <rect x="0" width="213" height="42" rx="18" />
-    <circle cx="207.68146" cy="33.091" r="7.68185" class="bubble" />
-    <circle cx="217.72699" cy="41.9547" r="3.54547" class="bubble" />
-    <text x="15" y="27">It's 71° F and <tspan class="emoji">☁️</tspan> today</text>
+  <g transform="translate(313, 228)" class="msg-5 sent-bubble">
+    <rect x="0" width="217" height="42" rx="18" />
+    <circle cx="211.68146" cy="33.091" r="7.68185" class="bubble" />
+    <circle cx="221.72699" cy="41.9547" r="3.54547" class="bubble" />
+    <text x="15" y="27">It's 73° F and <tspan class="emoji">☁️</tspan> today</text>
   </g>
   <!-- typing 6 -->
   <g transform="translate(10, 288)" class="typing-6 received-bubble">
@@ -654,10 +654,10 @@
     </circle>
   </g>
   <!-- farewell -->
-  <g transform="translate(288, 889)" class="msg-13 sent-bubble">
-    <rect x="0" width="242" height="42" rx="18" />
-    <circle cx="236.68146" cy="33.091" r="7.68185" class="bubble" />
-    <circle cx="246.72699" cy="41.9547" r="3.54547" class="bubble" />
-    <text x="15" y="27">Have a great Saturday! <tspan class="emoji">👋</tspan></text>
+  <g transform="translate(303, 889)" class="msg-13 sent-bubble">
+    <rect x="0" width="227" height="42" rx="18" />
+    <circle cx="221.68146" cy="33.091" r="7.68185" class="bubble" />
+    <circle cx="231.72699" cy="41.9547" r="3.54547" class="bubble" />
+    <text x="15" y="27">Have a great Sunday! <tspan class="emoji">👋</tspan></text>
   </g>
 </svg>
