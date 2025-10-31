@@ -466,7 +466,7 @@
     <rect x="0" width="217" height="42" rx="18" />
     <circle cx="211.68146" cy="33.091" r="7.68185" class="bubble" />
     <circle cx="221.72699" cy="41.9547" r="3.54547" class="bubble" />
-    <text x="15" y="27">It's 80° F and <tspan class="emoji">🌫</tspan><tspan class="emoji">️ today</tspan></text>
+    <text x="15" y="27">It's 68° F and <tspan class="emoji">🌫</tspan><tspan class="emoji">️ today</tspan></text>
   </g>
   <!-- typing 6 -->
   <g transform="translate(10, 288)" class="typing-6 received-bubble">
@@ -654,10 +654,10 @@
     </circle>
   </g>
   <!-- farewell -->
-  <g transform="translate(289, 889)" class="msg-13 sent-bubble">
-    <rect x="0" width="241" height="42" rx="18" />
-    <circle cx="235.68146" cy="33.091" r="7.68185" class="bubble" />
-    <circle cx="245.72699" cy="41.9547" r="3.54547" class="bubble" />
-    <text x="15" y="27">Have a great Thursday! <tspan class="emoji">👋</tspan></text>
+  <g transform="translate(308, 889)" class="msg-13 sent-bubble">
+    <rect x="0" width="222" height="42" rx="18" />
+    <circle cx="216.68146" cy="33.091" r="7.68185" class="bubble" />
+    <circle cx="226.72699" cy="41.9547" r="3.54547" class="bubble" />
+    <text x="15" y="27">Have a great Friday! <tspan class="emoji">👋</tspan></text>
   </g>
 </svg>
