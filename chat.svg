@@ -654,10 +654,10 @@
     </circle>
   </g>
   <!-- farewell -->
-  <g transform="translate(272, 889)" class="msg-13 sent-bubble">
-    <rect x="0" width="258" height="42" rx="18" />
-    <circle cx="252.68146" cy="33.091" r="7.68185" class="bubble" />
-    <circle cx="262.72699" cy="41.9547" r="3.54547" class="bubble" />
-    <text x="15" y="27">Have a great Wednesday! <tspan class="emoji">👋</tspan></text>
+  <g transform="translate(289, 889)" class="msg-13 sent-bubble">
+    <rect x="0" width="241" height="42" rx="18" />
+    <circle cx="235.68146" cy="33.091" r="7.68185" class="bubble" />
+    <circle cx="245.72699" cy="41.9547" r="3.54547" class="bubble" />
+    <text x="15" y="27">Have a great Thursday! <tspan class="emoji">👋</tspan></text>
   </g>
 </svg>
